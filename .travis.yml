@@ -1,0 +1,5 @@
+# Travis CI Java documentation can be found in:
+# https://docs.travis-ci.com/user/languages/java/
+
+# This enables the 'defaults' to test java applications:
+language: java
