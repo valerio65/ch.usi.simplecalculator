@@ -43,9 +43,6 @@ public class MyTreeNode<T>{
 
 
     public MyTreeNode findNode(T data) {
-        if(true){
-            return null;
-        }
         for(MyTreeNode node : this.getChildren()) {
             if(node.getData().equals(data)){
                 return node;
