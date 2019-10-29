@@ -11,8 +11,7 @@ public class MathOperations {
     }
 
     protected static Double minus(Double num1, Double num2) {
-        //TODO
-        return 0.0;
+        return num1 - num2;
     }
     protected static Double multiply(Double num1, Double num2) {
         //TODO
