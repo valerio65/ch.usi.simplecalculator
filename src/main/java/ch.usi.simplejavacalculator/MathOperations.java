@@ -18,8 +18,11 @@ public class MathOperations {
         return 0.0;
     }
     protected static Double divide(Double num1, Double num2) {
-        //TODO
-        return 0.0;
+        if (Math.abs(num2) <= 0.0000000001) {
+            throw new ArithmeticException("Cannot divide by 0");
+        }
+
+        return num1 / num2;
     }
     protected static Double xpowerofy(Double num1, Double num2) {
         //TODO
