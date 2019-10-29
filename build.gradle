@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'jacoco'
+
 }
 
 group 'ch.usi.simplecalculator'
@@ -11,7 +13,20 @@ repositories {
     mavenCentral()
 }
 
+jacoco {
+    toolVersion = "0.8.4"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination file("${buildDir}/jacocoHtml")
+    }
+}
 
 dependencies {
+    compile group: 'org.apache.commons', name: 'commons-math3', version: '3.6.1'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

@@ -4,12 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyTreeNode<T>{
-    private T data = null;
-    private List<MyTreeNode> children = new ArrayList<>();
-    private MyTreeNode parent = null;
+    private T data;
+    private List<MyTreeNode> children;
+    private MyTreeNode parent;
 
     public MyTreeNode(T data) {
+        children = new ArrayList<>();
+        parent = null;
         this.data = data;
+    }
+
+    public void clear() {
+        children.clear();
+        parent = null;
+        this.data = null;
     }
 
     public void addChild(MyTreeNode child) {
@@ -28,6 +36,28 @@ public class MyTreeNode<T>{
         }
         this.children.addAll(children);
     }
+
+    public boolean isLeaf() {
+        return children.isEmpty();
+    }
+
+
+    public MyTreeNode findNode(T data) {
+        for(MyTreeNode node : this.getChildren()) {
+            if(node.getData().equals(data)){
+                return node;
+            }
+        }
+        for(MyTreeNode node : this.getChildren()) {
+            MyTreeNode result = node.findNode(data);
+            if(result!=null){
+                return result;
+            }
+        }
+
+        return null;
+    }
+
 
     public List<MyTreeNode> getChildren() {
         return children;

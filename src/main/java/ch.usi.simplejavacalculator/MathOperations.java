@@ -1,11 +1,12 @@
 package ch.usi.simplejavacalculator;
 
 
+import org.apache.commons.math3.util.FastMath;
+
 public class MathOperations {
 
 
     protected static Double add(Double num1, Double num2) {
-        //TODO
         return num1 + num2;
     }
 
@@ -54,13 +55,11 @@ public class MathOperations {
     }
 
     protected static Double tan(Double num1) {
-
         return 0.0;
     }
 
     protected static Double log(Double num1) {
-        //TODO log base 10
-        return 0.0;
+        return FastMath.log(num1);
     }
 
     protected static Double rate(Double num1) {
