@@ -38,8 +38,10 @@ public class MathOperations {
     }
 
     protected static Double oneDevidedBy(Double num1) {
-        // TODO
-        return 0.0;
+        if (num1 == 0.0) {
+            throw new ArithmeticException("You can't divide by 0");
+        }
+        return 1.0 / num1;
 
     }
 
