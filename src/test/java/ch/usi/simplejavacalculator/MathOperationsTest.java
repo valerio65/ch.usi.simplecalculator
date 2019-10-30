@@ -1,5 +1,6 @@
 package ch.usi.simplejavacalculator;
 
+import org.apache.commons.math3.util.FastMath;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -60,6 +61,24 @@ public class MathOperationsTest {
         double expected = 3.0;
         Double actual = MathOperations.minus(3.0, 0.0);
         assertEquals(expected, actual, 0.000000001);
+    }
+
+    // Tan tests
+    @Test
+    public void testTanZero() {
+        double expected = 0.0;
+        assertEquals(expected, MathOperations.tan(0.0), 0.000000001);
+        assertEquals(expected, MathOperations.tan(FastMath.PI), 0.000000001);
+        assertEquals(expected, MathOperations.tan(2 * FastMath.PI), 0.000000001);
+        assertEquals(expected, MathOperations.tan(- FastMath.PI), 0.000000001);
+    }
+
+    @Test
+    public void testTanPi4() {
+        double actual_pi4 = MathOperations.tan(FastMath.PI / 4);
+        double actual_pi34 = MathOperations.tan(3 * FastMath.PI / 4);
+        assertEquals(1, actual_pi4,0.000000001);
+        assertEquals(-1, actual_pi34,0.000000001);
     }
 
 }

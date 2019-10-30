@@ -59,7 +59,11 @@ public class MathOperations {
     }
 
     protected static Double tan(Double num1) {
-        return 0.0;
+        // Tan is not defined for PI/2 + k*PI (for all integers k),
+        // but since we deal with finite precision arithmetic this is
+        // not an issue (we cannot represent those values exactly) and
+        // thus can be safely ignored.
+        return FastMath.tan(num1);
     }
 
     protected static Double log(Double num1) {
