@@ -62,4 +62,22 @@ public class MathOperationsTest {
         assertEquals(expected, actual, 0.000000001);
     }
 
+    @Test
+    public void cosineRangeTest(){
+        double max = 1.0;
+        double min = -1.0;
+        Double actual = MathOperations.cos(Math.PI/3);
+        assertTrue( min <= actual && actual <= max);
+    }
+
+    @Test
+    public void cosineValueTest(){
+        //cos(X°) == cos(X°+360°)
+        double degree1 = Math.PI/3;
+        double oneLap = 2*Math.PI;
+        Double value1 = MathOperations.cos(degree1);
+        Double value2 = MathOperations.cos(degree1+oneLap);
+        assertEquals(value1, value2, 0.000000001);
+    }
+
 }
