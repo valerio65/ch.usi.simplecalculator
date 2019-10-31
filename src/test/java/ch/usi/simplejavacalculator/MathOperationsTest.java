@@ -117,4 +117,22 @@ public class MathOperationsTest {
         Double difference = 0.000000001;
         assertEquals(sqrt_Math.doubleValue(), sqrt_Manual.doubleValue(), difference);
     }
+
+    @Test
+    public void testNaturalLogInf(){
+        double expected1 = 2.0;
+        Double actual1 = MathOperations.log(Math.exp(2.0));
+        assertEquals(expected1, actual1, 0.000000000001);
+
+        double expected2 = Double.NEGATIVE_INFINITY;
+        Double actual2 = MathOperations.log(0.0);
+        assertEquals(expected2, actual2, 0.000000000001);
+    }
+
+    @Test
+    public void testNaturalLog1(){
+        double expected1 = 0.0;
+        Double actual1 = MathOperations.log(1.0);
+        assertEquals(expected1, actual1, 0.000000000001);
+    }
 }
