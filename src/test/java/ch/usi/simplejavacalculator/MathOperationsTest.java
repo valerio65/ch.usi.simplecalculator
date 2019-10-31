@@ -1,6 +1,7 @@
 package ch.usi.simplejavacalculator;
 
 import org.apache.commons.math3.util.FastMath;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -118,5 +119,23 @@ public class MathOperationsTest {
         Double sqrt_Manual = MathOperations.squareRoot(a);
         Double difference = 0.000000001;
         assertEquals(sqrt_Math.doubleValue(), sqrt_Manual.doubleValue(), difference);
+    }
+    @Test
+    public void sinPeriodicityTest() {
+        //sin(x) == sin(x + 2π)
+        double x = Math.PI / 4;
+
+        double y1 = MathOperations.sin(x);
+        double y2 = MathOperations.sin(x + 2 * Math.PI);
+
+        assertEquals(y1, y2, Math.ulp(x));
+    }
+
+    @Test
+    public void sinValuesTest() {
+        assertEquals(MathOperations.sin(0.0), 0, 0.000000001);
+        assertEquals(MathOperations.sin(Math.PI / 2), 1, 0.000000001);
+        assertEquals(MathOperations.sin(Math.PI), 0, 0.000000001);
+        assertEquals(MathOperations.sin(3 * Math.PI / 2), -1, 0.000000001);
     }
 }
