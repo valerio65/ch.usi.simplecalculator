@@ -16,8 +16,7 @@ public class MathOperations {
         return num1 - num2;
     }
     protected static Double multiply(Double num1, Double num2) {
-        //TODO
-        return 0.0;
+        return num1 * num2;
     }
     protected static Double divide(Double num1, Double num2) {
         if (Math.abs(num2) <= 0.0000000001) {
