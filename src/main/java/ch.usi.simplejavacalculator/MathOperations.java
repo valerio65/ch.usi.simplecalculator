@@ -42,8 +42,9 @@ public class MathOperations {
             Double zero = 0.0;
             return zero;
         } else {
-            Double guess = 1.0;
-            Double inc = 1.0;
+            // the guess and the increment are now fixed
+            Double guess = num1;
+            Double inc = num1;
 
             for(int i = 0; i < 100; i++){
                 if (Math.pow(guess, 2) < num1.doubleValue()) {
