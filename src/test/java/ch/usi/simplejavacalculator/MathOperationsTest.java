@@ -118,4 +118,22 @@ public class MathOperationsTest {
         Double difference = 0.000000001;
         assertEquals(sqrt_Math.doubleValue(), sqrt_Manual.doubleValue(), difference);
     }
+    @Test
+    public void sinPeriodicityTest() {
+        //sin(x) == sin(x + 2π)
+        double x = Math.PI / 4;
+
+        double y1 = MathOperations.sin(x);
+        double y2 = MathOperations.sin(x + 2 * Math.PI);
+
+        assertEquals(y1, y2, Math.ulp(x));
+    }
+
+    @Test
+    public void sinValuesTest() {
+        assertEquals(MathOperations.sin(0.0), 0, Math.ulp(0));
+        assertEquals(MathOperations.sin(Math.PI / 2), 1, Math.ulp(1));
+        assertEquals(MathOperations.sin(Math.PI), 0, Math.ulp(0));
+        assertEquals(MathOperations.sin(3 * Math.PI / 2), -1, Math.ulp(-1));
+    }
 }
