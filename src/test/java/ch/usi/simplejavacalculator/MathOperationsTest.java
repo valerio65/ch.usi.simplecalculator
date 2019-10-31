@@ -137,7 +137,8 @@ public class MathOperationsTest {
         double expected1 = 0.0;
         Double actual1 = MathOperations.log(1.0);
         assertEquals(expected1, actual1, 0.000000000001);
-
+    }
+    
       @Test
     public void sinPeriodicityTest() {
         //sin(x) == sin(x + 2π)
