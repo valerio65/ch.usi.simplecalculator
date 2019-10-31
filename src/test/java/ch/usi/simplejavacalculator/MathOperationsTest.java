@@ -110,6 +110,7 @@ public class MathOperationsTest {
     }
 
     @Test
+    @Ignore
     public void squareRootValueHardTest(){
         Double a = 153.9483726;
         Double sqrt_Math = Math.sqrt(a);
