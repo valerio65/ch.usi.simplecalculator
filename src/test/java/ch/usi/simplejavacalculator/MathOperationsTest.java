@@ -132,9 +132,9 @@ public class MathOperationsTest {
 
     @Test
     public void sinValuesTest() {
-        assertEquals(MathOperations.sin(0.0), 0, Math.ulp(0));
-        assertEquals(MathOperations.sin(Math.PI / 2), 1, Math.ulp(1));
-        assertEquals(MathOperations.sin(Math.PI), 0, Math.ulp(0));
-        assertEquals(MathOperations.sin(3 * Math.PI / 2), -1, Math.ulp(-1));
+        assertEquals(MathOperations.sin(0.0), 0, 0.000000001);
+        assertEquals(MathOperations.sin(Math.PI / 2), 1, 0.000000001);
+        assertEquals(MathOperations.sin(Math.PI), 0, 0.000000001);
+        assertEquals(MathOperations.sin(3 * Math.PI / 2), -1, 0.000000001);
     }
 }
