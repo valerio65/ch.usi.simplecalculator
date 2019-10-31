@@ -85,8 +85,8 @@ public class MathOperations {
     }
 
     protected static Double log(Double num1) {
-        // return FastMath.log(num1);
-        return Math.log(num1);
+        return FastMath.log(num1);
+        //return Math.log(num1);
     }
 
     protected static Double rate(Double num1) {
