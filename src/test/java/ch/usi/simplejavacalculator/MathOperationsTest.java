@@ -1,6 +1,7 @@
 package ch.usi.simplejavacalculator;
 
 import org.apache.commons.math3.util.FastMath;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
