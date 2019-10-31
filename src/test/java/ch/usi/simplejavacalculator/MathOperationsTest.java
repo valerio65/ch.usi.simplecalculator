@@ -100,4 +100,21 @@ public class MathOperationsTest {
 
     }
 
+    @Test
+    public void squareRootValueTest(){
+        Double a = 2.0;
+        Double sqrt_Math = Math.sqrt(a);
+        Double sqrt_Manual = MathOperations.squareRoot(a);
+        Double difference = 0.000000001;
+        assertEquals(sqrt_Math.doubleValue(), sqrt_Manual.doubleValue(), difference);
+    }
+
+    @Test
+    public void squareRootValueHardTest(){
+        Double a = 153.9483726;
+        Double sqrt_Math = Math.sqrt(a);
+        Double sqrt_Manual = MathOperations.squareRoot(a);
+        Double difference = 0.000000001;
+        assertEquals(sqrt_Math.doubleValue(), sqrt_Manual.doubleValue(), difference);
+    }
 }

@@ -1,6 +1,8 @@
 package ch.usi.simplejavacalculator;
 
 
+import org.apache.commons.math3.exception.MathIllegalNumberException;
+import org.apache.commons.math3.exception.util.ExceptionContext;
 import org.apache.commons.math3.util.FastMath;
 
 public class MathOperations {
@@ -36,8 +38,25 @@ public class MathOperations {
 
 
     protected static Double squareRoot(Double num1) {
-        //TODO
-        return 0.0;
+        if(num1.doubleValue() < 0.0){
+            // Needs to throw exception, but cannot seem to do so
+            Double zero = 0.0;
+            return zero;
+        } else {
+            Double guess = 1.0;
+            Double inc = 1.0;
+
+            for(int i = 0; i < 100; i++){
+                if (Math.pow(guess, 2) < num1.doubleValue()) {
+                    inc = inc.doubleValue() / 2;
+                    guess += inc.doubleValue();
+                } else {
+                    inc = inc.doubleValue() / 2;
+                    guess -= inc.doubleValue();
+                }
+            }
+            return guess;
+        }
     }
 
     protected static Double oneDevidedBy(Double num1) {
