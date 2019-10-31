@@ -72,8 +72,7 @@ public class MathOperations {
     }
 
     protected static Double sin(Double num1) {
-        //TODO
-        return 0.0;
+        return Math.sin(num1);
     }
 
     protected static Double tan(Double num1) {
