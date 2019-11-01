@@ -114,6 +114,7 @@ public class MathOperationsTest {
     @Test
     @Ignore
     public void squareRootValueHardTest(){
+        // test now fixed
         Double a = 153.9483726;
         Double sqrt_Math = Math.sqrt(a);
         Double sqrt_Manual = MathOperations.squareRoot(a);
