@@ -90,8 +90,9 @@ public class MathOperations {
     }
 
     protected static Double rate(Double num1) {
-        //TODO rate num1/100
-        return 0.0;
+        if(num1 < 0)
+            throw new ArithmeticException("Rate can be computed with positive input only.");
+        return num1 / 100;
     }
 
 

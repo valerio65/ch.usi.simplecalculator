@@ -140,7 +140,7 @@ public class MathOperationsTest {
         assertEquals(expected1, actual1, 0.000000000001);
     }
     
-      @Test
+    @Test
     public void sinPeriodicityTest() {
         //sin(x) == sin(x + 2π)
         double x = Math.PI / 4;
@@ -157,5 +157,17 @@ public class MathOperationsTest {
         assertEquals(MathOperations.sin(Math.PI / 2), 1, 0.000000001);
         assertEquals(MathOperations.sin(Math.PI), 0, 0.000000001);
         assertEquals(MathOperations.sin(3 * Math.PI / 2), -1, 0.000000001);
+    }
+
+    @Test
+    public void shouldComputeRate() {
+        assertEquals(MathOperations.rate(100.0), 1.0, 0.000000001);
+        assertEquals(MathOperations.rate(50.0), 0.5, 0.000000001);
+        assertEquals(MathOperations.rate(1.0), 0.01, 0.000000001);
+    }
+
+    @Test (expected = ArithmeticException.class)
+    public void shouldThrowIfTriesToComputeNegativeRate() {
+        MathOperations.rate(-50.0);
     }
 }
