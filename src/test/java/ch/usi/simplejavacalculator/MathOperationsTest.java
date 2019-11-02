@@ -187,7 +187,18 @@ public class MathOperationsTest {
                 expected *= base;
             }
             System.out.println(String.format("Testing %e ^ %d (%e), expected %e", base, i, ((double) i), expected));
-            assertEquals(expected, MathOperations.xpowerofy(base, (double)i), delta);
+            assertEquals(expected, MathOperations.xpowerofy(base, (double) i), delta);
         }
+    }
+
+    public void shouldComputeRate() {
+        assertEquals(MathOperations.rate(100.0), 1.0, 0.000000001);
+        assertEquals(MathOperations.rate(50.0), 0.5, 0.000000001);
+        assertEquals(MathOperations.rate(1.0), 0.01, 0.000000001);
+    }
+
+    @Test (expected = ArithmeticException.class)
+    public void shouldThrowIfTriesToComputeNegativeRate() {
+        MathOperations.rate(-50.0);
     }
 }
