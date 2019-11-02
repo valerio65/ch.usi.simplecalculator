@@ -167,28 +167,27 @@ public class MathOperationsTest {
     public void xPowerofy() {
         // power 0 -> 1
         final double delta = 1.0E-7;
-        assertEquals(MathOperations.xpowerofy(1.05D, 0D), 1, delta);
-        assertEquals(MathOperations.xpowerofy(-100.1234, 0D), 1, delta);
+        assertEquals(1, MathOperations.xpowerofy(1.05D, 0D), delta);
+        assertEquals(1, MathOperations.xpowerofy(-100.1234, 0D), delta);
         // Power 1
-        assertEquals(MathOperations.xpowerofy(12D, 1D), 12D, delta);
-        assertEquals(MathOperations.xpowerofy(-1024.516, 1D), -1024.516, delta);
+        assertEquals(12D, MathOperations.xpowerofy(12D, 1D), delta);
+        assertEquals(-1024.516, MathOperations.xpowerofy(-1024.516, 1D), delta);
 
         // Power 2
         double base = 169.5;
         double expected = base * base;
-        assertEquals(MathOperations.xpowerofy(base, 2D), expected, delta);
+        assertEquals(expected, MathOperations.xpowerofy(base, 2D), delta);
 
-        // Random integer powers (seems Maths.pow is quite imprecise)
-//        Random rand = new Random(123);
-//        rand.doubles(10)
-//                .forEach(d -> {
-//                    int pow = rand.nextInt(10);
-//                    System.out.println(String.format("Testing %e ^ %d (%e)", 10*d, pow, ((double) pow)));
-//                    double expected = Stream.iterate(10*d, x -> x * x)
-//                            .limit(pow)
-//                            .mapToDouble(Double::doubleValue)
-//                            .sum();
-//                    assertEquals(MathOperations.xpowerofy(10*d, (double) pow), expected, delta);
-//                });
+        // Random integer powers
+        Random rand = new Random(123);
+        for (int i = 2; i <= 12; i++) {
+            base = rand.nextDouble() * 10;
+            expected = base;
+            for (int j = 1; j < i; j++) {
+                expected *= base;
+            }
+            System.out.println(String.format("Testing %e ^ %d (%e), expected %e", base, i, ((double) i), expected));
+            assertEquals(expected, MathOperations.xpowerofy(base, (double)i), delta);
+        }
     }
 }
