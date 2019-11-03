@@ -201,4 +201,9 @@ public class MathOperationsTest {
     public void shouldThrowIfTriesToComputeNegativeRate() {
         MathOperations.rate(-50.0);
     }
+
+    @Test
+    public void squareValueTest(){
+
+    }
 }

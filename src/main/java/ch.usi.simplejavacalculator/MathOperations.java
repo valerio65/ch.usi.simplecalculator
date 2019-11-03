@@ -31,8 +31,8 @@ public class MathOperations {
     }
 
     protected static Double square(Double num1) {
-        //TODO
-        return 0.0;
+        double square = Math.pow(num1, 2);
+        return square;
     }
 
 
