@@ -204,6 +204,15 @@ public class MathOperationsTest {
 
     @Test
     public void squareValueTest(){
+        assertEquals(MathOperations.square(0.0),0.0,0.000000001);
+        assertEquals(MathOperations.square(-1.0),1.0,0.000000001);
+        assertEquals(MathOperations.square(2.0),4.0,0.000000001);
+    }
 
+    @Test
+    public void squareDifferenceTest(){
+        double x = MathOperations.square(99.0) - MathOperations.square(66.0);
+        double y = (99.0 + 66.0)*(99.0-66.0);
+        assertEquals(x,y,0.000000001);
     }
 }
